@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="ELHAMRANI Soufiane" />
+    <meta
+      name="description"
+      content="Portfolio of ELHAMRANI Soufiane, a Junior Frontend Developer from Morocco building modern, responsive and interactive web experiences with React.js."
+    />
+    <meta name="theme-color" content="#080B14" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ELHAMRANI Soufiane — Junior Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Junior Frontend Developer from Morocco. I build modern, responsive and interactive web experiences with React.js."
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>ELHAMRANI Soufiane — Junior Frontend Developer</title>
+
+    <!-- Prevent theme / language flash before React hydrates -->
+    <script>
+      (function () {
+        try {
+          var storedTheme = localStorage.getItem("portfolio-theme");
+          var isDark = storedTheme ? storedTheme === "dark" : true;
+          var root = document.documentElement;
+          root.classList.toggle("dark", isDark);
+          root.classList.toggle("light", !isDark);
+          root.style.colorScheme = isDark ? "dark" : "light";
+
+          var themeMeta = document.querySelector('meta[name="theme-color"]');
+          if (themeMeta) themeMeta.setAttribute("content", isDark ? "#080B14" : "#F8FAFC");
+
+          var storedLang = localStorage.getItem("portfolio-lang");
+          var lang = ["en", "fr", "ar"].indexOf(storedLang) !== -1 ? storedLang : "en";
+          root.lang = lang;
+          root.dir = lang === "ar" ? "rtl" : "ltr";
+        } catch (e) {
+          /* localStorage can be unavailable in private mode — defaults are fine. */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
